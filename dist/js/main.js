@@ -27,7 +27,7 @@ function cityPool() {
             if (compare(json.responseJSON.Cities[i].City, value)) {
                 matchedCities.push(json.responseJSON.Cities[i].City);
                 htmlText += '<div class="filter-output">' + json.responseJSON.Cities[i].City + '</div>';
-            } else if (compare(json.responseJSON.Cities[i].City, value) === false) {
+            } else {
                 htmlText += '';
             }
         }
@@ -36,7 +36,7 @@ function cityPool() {
         filterOutput.innerHTML = htmlText;
     } else {
         htmlText += '<div id="filter-output-none" class="filter-output-none">Такого города нет, проверьте ввод.</div>';
-        window.setTimeout(wrongCity, 500);
+        window.setTimeout(wrongCity, 1000);
         filterOutput.innerHTML = htmlText;
     }
     citySelect();
